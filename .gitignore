@@ -1,0 +1,14 @@
+/.idea
+/.venv/
+/__pycache__/
+/node_modules/
+*.iml
+*.swp
+.DS_Store
+.revision
+host.key
+package-lock.json
+target/
+
+temp/*
+!temp/.gitkeep
