@@ -2,7 +2,13 @@ grammar Json;
 
 
 json
-    : value
+    : val
+    ;
+
+val
+    : obj
+    | arr
+    | prim
     ;
 
 obj
@@ -11,25 +17,23 @@ obj
     ;
 
 pair
-    : STRING ':' value
+    : STR ':' val
     ;
 
-array
-    : '[' value (',' value)* ']'
+arr
+    : '[' val (',' val)* ']'
     | '[' ']'
     ;
 
-value
-    : STRING
-    | NUMBER
-    | obj
-    | array
-    | 'true'
-    | 'false'
-    | 'null'
+prim
+    : STR
+    | NUM
+    | TRUE
+    | FALSE
+    | NULL
     ;
 
-STRING
+STR
     : '"' (ESC | SAFECODEPOINT)* '"'
     ;
 
@@ -49,7 +53,7 @@ fragment SAFECODEPOINT
     : ~ ["\\\u0000-\u001F]
     ;
 
-NUMBER
+NUM
     : '-'? INT ('.' [0-9] +)? EXP?
     ;
 
@@ -61,6 +65,10 @@ fragment INT
 fragment EXP
     : [Ee] [+\-]? INT
     ;
+
+TRUE: 'true';
+FALSE: 'false';
+NULL: 'null';
 
 WS
     : [ \t\n\r] + -> skip

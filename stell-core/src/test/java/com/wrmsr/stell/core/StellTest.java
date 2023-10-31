@@ -6,6 +6,6 @@ public class StellTest
         extends TestCase
 {
     public void testStell() throws Throwable {
-        System.out.println("hi");
+        Stell.sayHi();
     }
 }

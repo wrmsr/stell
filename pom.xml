@@ -19,8 +19,6 @@
 
     <properties>
 
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
         <main.basedir>${project.basedir}</main.basedir>
 
         <protobuf.input.directory>${project.basedir}/src/main/proto</protobuf.input.directory>
@@ -55,6 +53,13 @@
                 <version>${dep.antlr4.version}</version>
             </dependency>
 
+            <!-- Utilities -->
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>31.1-jre</version>
+            </dependency>
 
             <!-- Test -->
 
@@ -109,7 +114,6 @@
                 <configuration>
                     <source>21</source>
                     <target>21</target>
-                    <encoding>UTF-8</encoding>
                     <compilerArgs>
                         <arg>-Xlint:all,-options,-path</arg>
                         <arg>-parameters</arg>
