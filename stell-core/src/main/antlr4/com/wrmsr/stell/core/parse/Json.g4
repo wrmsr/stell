@@ -66,9 +66,9 @@ fragment EXP
     : [Ee] [+\-]? INT
     ;
 
-TRUE: 'true';
-FALSE: 'false';
-NULL: 'null';
+TRUE: 'TRUE';
+FALSE: 'FALSE';
+NULL: 'NULL';
 
 WS
     : [ \t\n\r] + -> skip
