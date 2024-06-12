@@ -26,6 +26,8 @@
 
         <dep.antlr4.version>4.13.1</dep.antlr4.version>
         <dep.jackson.version>2.12.2</dep.jackson.version>
+        <dep.guava.version>31.1-jre</dep.guava.version>
+        <dep.guice.version>6.0.0</dep.guice.version>
 
     </properties>
 
@@ -58,7 +60,13 @@
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>31.1-jre</version>
+                <version>${dep.guava.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.inject</groupId>
+                <artifactId>guice</artifactId>
+                <version>${dep.guice.version}</version>
             </dependency>
 
             <!-- Test -->
